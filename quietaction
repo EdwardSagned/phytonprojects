@@ -1,0 +1,19 @@
+import os
+more="y"
+while more=="y":    
+    name=input("What is the name of the bidder: ")
+    price=int(input("what is your bid price: "))
+    action={}
+    action[name]= price
+    more=input("Is there anyone left to bid? (y/n)")
+    if more=="y":
+        os.system("cls")
+    else:
+        highest_value=0
+        pos=0
+        for people in action:
+            if highest_value< action[people]:
+                highest_value=action[people]
+                pos= people
+                print(pos)
+        print(f"The highest bidder is {pos} with {highest_value}€ bid")
