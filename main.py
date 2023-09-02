@@ -1,5 +1,5 @@
 import random
-word_list = ["aardvark", "baboon", "camel"]
+word_list = ["lion", "baboon", "camel","dog","cat","banana","rain"]
 stages = ['''
   +---+
   |   |
