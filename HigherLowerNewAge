@@ -1,0 +1,47 @@
+import random
+import os 
+from game_data1 import data
+choice1=random.choice(data)
+choice2=choice1
+while choice1==choice2:
+    choice2=random.choice(data)
+score=0
+print(f"Compare A: {choice1['name']}, a {choice1['description']}, from {choice1['country']}.")
+print("VS")
+print(f"Compare B: {choice2['name']}, a {choice2['description']}, from {choice2['country']}.")
+guess=input("Who has more followers? Type 'a' or 'b': ").lower()
+if guess=="a" and choice1['follower_count']>choice2['follower_count']:
+    guess_is_correct=True
+    score+=1
+    os.system('cls')
+    print("You're right! Current score: {score}")
+elif guess=="b" and choice2['follower_count']>choice1['follower_count']:
+    guess_is_correct=True
+    score+=1
+    os.system('cls')
+    print("You're right! Current score: {score}")
+else:
+    guess_is_correct=False
+    os.system('cls')
+while guess_is_correct:
+    choice1=choice2
+    while choice1==choice2:
+        choice2=random.choice(data)
+    print(f"Compare A: {choice1['name']}, a {choice1['description']}, from {choice1['country']}.")
+    print("VS")
+    print(f"Compare B: {choice2['name']}, a {choice2['description']}, from {choice2['country']}.")
+    guess=input("Who has more followers? Type 'a' or 'b': ").lower()
+    if guess=="a" and choice1['follower_count']>choice2['follower_count']:
+        guess_is_correct=True
+        score+=1
+        os.system('cls')
+        print("You're right! Current score: {score}")
+    elif guess=="b" and choice2['follower_count']>choice1['follower_count']:
+        guess_is_correct=True
+        score+=1
+        os.system('cls')
+        print("You're right! Current score: {score}")
+    else:
+        guess_is_correct=False
+        os.system('cls')
+print(f"Sorry that's wrong. Final score{score}")
